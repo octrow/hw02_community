@@ -12,7 +12,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yatube.settings')
 def download_bootstrap():
     CSS_FILE_NAME = 'bootstrap.min.css'
     CSS_FILE_URL = ('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1'
-                    +'/dist/css/bootstrap.min.css')
+                    + '/dist/css/bootstrap.min.css')
     CSS_FILE_DIR = 'static/css'
     JS_FILE_NAME = 'bootstrap.bundle.min.js'
     JS_FILE_URL = (
@@ -60,9 +60,9 @@ def main():
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
-            'Couldn't import Django. Are you sure it's installed and '
-            'available on your PYTHONPATH environment variable? Did you '
-            'forget to activate a virtual environment?'
+            "Couldn't import Django. Are you sure it's installed and "
+            "available on your PYTHONPATH environment variable? Did you "
+            "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
 
@@ -71,4 +71,3 @@ if __name__ == '__main__':
     download_bootstrap()
     execute_from_command_line()
     main()
-
