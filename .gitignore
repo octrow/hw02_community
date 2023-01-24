@@ -1,3 +1,7 @@
+# Static
+yatube/static/css
+yatube/static/js
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -26,6 +30,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+lefthook.yml
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -60,6 +65,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+yatube/.dbeaver
 
 # Flask stuff:
 instance/
