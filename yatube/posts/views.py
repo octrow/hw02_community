@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from posts.settings import num_posts
+from django.conf import settings
 
 from .models import Group, Post
 
@@ -7,8 +7,8 @@ from .models import Group, Post
 def index(request):
     template = 'posts/index.html'
     title = 'Последние обновления на сайте'
-    text = 'Лев Николаевич Толстой'
-    posts = Post.objects.all()[:num_posts]
+    text = 'Welcome to YaTube!'
+    posts = Post.objects.all()[:settings.NUM_POSTS]
     context = {
         'title': title,
         'text': text,
@@ -20,8 +20,8 @@ def index(request):
 def group_posts(request, slug):
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    title = "Записи сообщества " + group.title
-    posts = Post.objects.filter(group=group)[:num_posts]
+    title = group.title
+    posts = Post.objects.filter(group=group)[:settings.NUM_POSTS]
     context = {
         'group': group,
         'posts': posts,
