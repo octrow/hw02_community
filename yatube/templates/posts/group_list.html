@@ -16,13 +16,6 @@
               <div class="card-body">
                 <p class="card-text">{{ post.text|linebreaks }}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="{% url 'posts:group_list' post.group.slug %}"
-                       type="button"
-                       class="btn btn-outline-secondary">
-                      Все записи группы
-                    </a>
-                  </div>
                   <small class="text-muted">
                     {{ post.author.get_full_name }},
                     {{ post.pub_date|date:"d E Y" }}

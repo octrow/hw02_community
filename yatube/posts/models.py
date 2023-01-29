@@ -5,9 +5,9 @@ User = get_user_model()
 
 
 class Group(models.Model):
-    title = models.CharField(max_length=200, verbose_name="Имя группы")
-    slug = models.SlugField(unique=True, verbose_name="Slug группы")
-    description = models.TextField(verbose_name="Описание группы")
+    title = models.CharField("Имя группы", max_length=200)
+    slug = models.SlugField("Slug группы", unique=True)
+    description = models.TextField("Описание группы")
 
     class Meta:
         verbose_name = "Группа"
@@ -20,7 +20,7 @@ class Group(models.Model):
 
 
 class Post(models.Model):
-    text = models.TextField(verbose_name="Текст поста")
+    text = models.TextField("Текст поста")
     pub_date = models.DateTimeField(
         auto_now_add=True, verbose_name="Дата публикации"
     )
@@ -45,4 +45,4 @@ class Post(models.Model):
         verbose_name_plural = "Посты"
 
     def __str__(self):
-        return self.text[:30] + "..." if len(self.text) > 30 else self.text
+        return f"{self.text[:30]}... "
